@@ -1,0 +1,5 @@
+~~1, API for getPostsByAssignedTo is not working, get with params is still returning all posts.~~
+2, Posts edit change assignTo should only can be export-reviewer.
+3, Posts edit change assignTo should add checkMaxAssignTo <= currentAssigned check.
+4, Posts edit update assignedTo failed, put request doesn't have "assignedTo" column.
+~~5, Audit log error ">Fatal error</b>:  Uncaught Error: Class &quot;App\Models\Exception&quot; not found in /var/www/html/backend/src/Models/Post.php:105"~~

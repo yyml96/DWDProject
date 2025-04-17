@@ -1,0 +1,19 @@
+services:
+  php-apache:
+    build: .
+    container_name: QC-php-apache-container
+    ports:
+      - "8098:80"
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+    volumes:
+      - C:/Users/Administrator/OneDrive - LUT University/桌面/DynamicWebDev/qc/src/backend:/var/www/html/backend
+    env_file:
+      - .env
+    command: bash -c "cd /var/www/html/backend && composer install && apache2-foreground"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

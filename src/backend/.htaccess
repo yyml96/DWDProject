@@ -1,0 +1,15 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization, Range"
+    Header set Access-Control-Expose-Headers "Content-Range, X-Content-Range"
+</IfModule>
+
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/(.*)$ /var/www/html/backend/src/routes/api.php [QSA,L]
+RewriteRule ^test$ /var/www/html/backend/src/routes/api.php [QSA,L]
+
